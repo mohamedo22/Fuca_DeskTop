@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="fucaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admins">
+          <Key>
+            <PropertyRef Name="user_namee" />
+          </Key>
+          <Property Name="user_namee" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="passwordd" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_namee" Type="varchar" MaxLength="80" />
+          <Property Name="gender" Type="varchar" MaxLength="30" />
+          <Property Name="age" Type="int" />
+          <Property Name="addresss" Type="varchar" MaxLength="200" />
+          <Property Name="datee" Type="date" />
+          <Property Name="department" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="userss">
+          <Key>
+            <PropertyRef Name="user_namee" />
+          </Key>
+          <Property Name="user_namee" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="passwordd" Type="int" />
+        </EntityType>
+        <EntityContainer Name="fucaModelStoreContainer">
+          <EntitySet Name="admins" EntityType="Self.admins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_table" EntityType="Self.user_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="userss" EntityType="Self.userss" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="fucaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="user_namee" />
+          </Key>
+          <Property Name="user_namee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="passwordd" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_namee" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="age" Type="Int32" />
+          <Property Name="addresss" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="datee" Type="DateTime" Precision="0" />
+          <Property Name="department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="userss">
+          <Key>
+            <PropertyRef Name="user_namee" />
+          </Key>
+          <Property Name="user_namee" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="passwordd" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="fucaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admins" EntityType="Self.admin" />
+          <EntitySet Name="user_table" EntityType="Self.user_table" />
+          <EntitySet Name="usersses" EntityType="Self.userss" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="fucaModelStoreContainer" CdmEntityContainer="fucaEntities">
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="fucaModel.admin">
+              <MappingFragment StoreEntitySet="admins">
+                <ScalarProperty Name="user_namee" ColumnName="user_namee" />
+                <ScalarProperty Name="passwordd" ColumnName="passwordd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_table">
+            <EntityTypeMapping TypeName="fucaModel.user_table">
+              <MappingFragment StoreEntitySet="user_table">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user_namee" ColumnName="user_namee" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="addresss" ColumnName="addresss" />
+                <ScalarProperty Name="datee" ColumnName="datee" />
+                <ScalarProperty Name="department" ColumnName="department" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usersses">
+            <EntityTypeMapping TypeName="fucaModel.userss">
+              <MappingFragment StoreEntitySet="userss">
+                <ScalarProperty Name="user_namee" ColumnName="user_namee" />
+                <ScalarProperty Name="passwordd" ColumnName="passwordd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

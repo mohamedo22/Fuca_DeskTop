@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="fucaModelStoreContainer" CdmEntityContainer="fucaEntities">
+    <EntitySetMapping Name="admins">
+      <EntityTypeMapping TypeName="fucaModel.admin">
+        <MappingFragment StoreEntitySet="admins">
+          <ScalarProperty Name="user_namee" ColumnName="user_namee" />
+          <ScalarProperty Name="passwordd" ColumnName="passwordd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_table">
+      <EntityTypeMapping TypeName="fucaModel.user_table">
+        <MappingFragment StoreEntitySet="user_table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_namee" ColumnName="user_namee" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="addresss" ColumnName="addresss" />
+          <ScalarProperty Name="datee" ColumnName="datee" />
+          <ScalarProperty Name="department" ColumnName="department" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usersses">
+      <EntityTypeMapping TypeName="fucaModel.userss">
+        <MappingFragment StoreEntitySet="userss">
+          <ScalarProperty Name="user_namee" ColumnName="user_namee" />
+          <ScalarProperty Name="passwordd" ColumnName="passwordd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="fucaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admins">
+    <Key>
+      <PropertyRef Name="user_namee" />
+    </Key>
+    <Property Name="user_namee" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="passwordd" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_namee" Type="varchar" MaxLength="80" />
+    <Property Name="gender" Type="varchar" MaxLength="30" />
+    <Property Name="age" Type="int" />
+    <Property Name="addresss" Type="varchar" MaxLength="200" />
+    <Property Name="datee" Type="date" />
+    <Property Name="department" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="userss">
+    <Key>
+      <PropertyRef Name="user_namee" />
+    </Key>
+    <Property Name="user_namee" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="passwordd" Type="int" />
+  </EntityType>
+  <EntityContainer Name="fucaModelStoreContainer">
+    <EntitySet Name="admins" EntityType="Self.admins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_table" EntityType="Self.user_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userss" EntityType="Self.userss" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
